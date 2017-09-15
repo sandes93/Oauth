@@ -11,9 +11,9 @@ module.exports = (app) => {
 
 	app.get('/auth/google/callback', passport.authenticate('google'));
 
-	// app.get('api/current_user', (req, res) => {
-	// 	console.log('1');
-	// 	res.send(req.user);
-	// 	console.log('2');
-	// });
+	app.get('/api/current_user', (req, res) => {
+		console.log('found');
+		res.send(req.user);
+		console.log('2');
+	});
 }

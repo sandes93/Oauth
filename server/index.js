@@ -13,15 +13,15 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-// app.use(
-// 	cookieSession({
-// 		maxAge: 30*24*60*60*1000,
-// 		keys: [keys.cookieKey]
-// 	})
-// );
+app.use(
+	cookieSession({
+		maxAge: 30*24*60*60*1000,
+		keys: [keys.cookieKey]
+	})
+);
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 
